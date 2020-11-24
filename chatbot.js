@@ -161,7 +161,7 @@ const paradigm = options_reply([
 		"Com isso código pode ser reutilizado, fica mais organizado e modular.",
 		"Orientação a objetos:\n\nA orientação em objetos tem como propósito juntar dados e instruções na forma de um objeto e fazer um objeto interagir com outro por mensagens (ou métodos).",
 		"Muitas vezes também associado ao polimorfismo por herança ele permite modularização do código e organização fácil para projetos.",
-	], paradigm)],,
+	], paradigm)],
 	[/^b$/i, (match) => thread("Declarativo", [
 		"Em programação declarativa você descreve o que o programa faz, há dois paradigmas principais derivados dele.",
 		"Funcional:\n\nEm programação funcional as funções são elementos de primeira classe e todas retornam um valor assim como a definição matemática, ela também valoriza a imutabilidade.",
