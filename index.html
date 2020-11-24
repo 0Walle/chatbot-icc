@@ -27,6 +27,7 @@
 				.replace(/&/g, "&amp;")
          		.replace(/</g, "&lt;")
          		.replace(/>/g, "&gt;")
+         		.replace(/&lt;(https:\/\/.*)&gt;/g, (m, link) => `<a href="${link}">${link}</a>`)
          		.replace(/"/g, "&quot;")
          		.replace(/'/g, "&apos;")
          		.replace(/'/g, "&apos;")

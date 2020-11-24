@@ -163,14 +163,14 @@ const paradigm = options_reply([
 		"Muitas vezes também associado ao polimorfismo por herança ele permite modularização do código e organização fácil para projetos.",
 	], paradigm)],
 	[/^b$/i, (match) => thread("Declarativo", [
-		"Em programação declarativa você descreve o que o programa faz, há dois paradigmas principais derivados dele."
-		"Funcional:\n\nEm programação funcional as funções são elementos de primeira classe e todas retornam um valor assim como a definição matemática, ela também valoriza a imutabilidade."
-		"Esse paradigma divide o programa em varias funções pequenas tornando-o muito modular e poder usar funções como argumento garante muita flexibilidade e composição. Por conta da imutabilidade também é comumente usado junto a programação concorrente."
-		"Logico:\n\nProgramação lógica é baseada em logica formal, o programa é escrito como uma sequencia de sentenças lógicas."
+		"Em programação declarativa você descreve o que o programa faz, há dois paradigmas principais derivados dele.",
+		"Funcional:\n\nEm programação funcional as funções são elementos de primeira classe e todas retornam um valor assim como a definição matemática, ela também valoriza a imutabilidade.",
+		"Esse paradigma divide o programa em varias funções pequenas tornando-o muito modular e poder usar funções como argumento garante muita flexibilidade e composição. Por conta da imutabilidade também é comumente usado junto a programação concorrente.",
+		"Logico:\n\nProgramação lógica é baseada em logica formal, o programa é escrito como uma sequencia de sentenças lógicas.",
 		"Ele é vantajoso para tratar de coisas com logica complexa ou inteligências artificiais."
 	], paradigm)],
-	[/^c$/i, (match) => "O paradigma de programação reflexivo permite que a linguagem trate de coisas dela mesmo enquanto o código executa.",
-	[/^d$/i, (match) => "Em programação concorrente o código não é executado em sequencia, então pode ter duas funções executando ao mesmo tempo ou que aparentam estar, é útil para tarefas que podem ser realizadas em paralelo, como a verificação de dados de vários usuários num banco de dados.",
+	[/^c$/i, (match) => "O paradigma de programação reflexivo permite que a linguagem trate de coisas dela mesmo enquanto o código executa."],
+	[/^d$/i, (match) => "Em programação concorrente o código não é executado em sequencia, então pode ter duas funções executando ao mesmo tempo ou que aparentam estar, é útil para tarefas que podem ser realizadas em paralelo, como a verificação de dados de vários usuários num banco de dados."],
 	[/^voltar/i, (match) => go_back()],
 ])
 
