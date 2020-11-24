@@ -2,4 +2,4 @@
 
 Chatbot feito para trabalho da faculdade.
 
-Demo: (placeholder)[]
+Demo: [](https://0walle.github.io/chatbot-icc/)
