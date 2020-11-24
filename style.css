@@ -1,0 +1,109 @@
+:root {
+	--mint-cream: #f1fffaff;
+	--tea-green: #ccfccbff;
+	--celadon: #96e6b3ff;
+	--middle-green: #568259ff;
+	--ebony: #464e47ff;
+}
+
+body{
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--celadon);
+	height: 100%;
+	justify-content: flex-end;
+
+	font-family: "Segoe UI", sans-serif
+}
+
+#subject-area {
+	/*height: 3em;*/
+	background-color: var(--middle-green);
+	text-align: center;
+	font-weight: bold;
+	color: var(--mint-cream);
+	font-size: 20px;
+	padding: 10px 0px;
+}
+
+#messages-area-container {
+	overflow-y: scroll;
+	flex-grow: 1;
+}
+
+#messages-area {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+#foot{
+	padding: 10px;
+	background-color: var(--middle-green);
+	display: flex;
+	flex-direction: row;
+}
+
+#message-textarea {
+	flex-grow: 1;
+	margin: 0px 5px;
+	background-color: var(--mint-cream);
+	vertical-align: middle;
+	padding: 10px 1em;
+	outline: none;
+
+	resize: none;
+
+	border-radius: 20px;
+	border: none;
+		font-size: 16px;
+}
+
+#submit{
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.message-block {
+	background-color: var(--mint-cream);
+	font-size: 16px;
+	
+	max-width: 50vw;
+	min-width: 200px;
+	
+	display:table;
+
+	padding: 6px 10px;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	border-radius: 10px;
+	word-wrap: break-word;
+}
+
+.message-user {
+	align-self: flex-end;
+	background-color: var(--tea-green);
+}
+
+.message-bot {
+	align-self: flex-start;
+}
+
+.iconify {
+	color: var(--mint-cream);
+	width: 24px;
+	height: 24px;
+} 
+
+.dot-pulse {
+	margin-left: 16px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}

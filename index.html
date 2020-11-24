@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chat</title>
+	<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="dot_pulse.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="chatbot.js"></script>
+</head>
+<body>
+	<div id="subject-area"><span>Inicio</span></div>
+	<div id="messages-area-container"><div id="messages-area"></div></div>
+	<div id="foot">
+		<span id="message-textarea" contenteditable></span>
+		<button id="submit" onclick="send_message();">
+			<span class="iconify" data-icon="mdi:send" data-inline="false"></span>
+		</button>
+	</div>
+	<script>
+		const subject_area = document.getElementById("subject-area");
+		const messages_area_container = document.getElementById("messages-area-container");
+		const messages_area = document.getElementById("messages-area");
+		const message_textarea = document.getElementById("message-textarea");
+
+		function escape_html(txt, line_break = false) {
+			return txt
+				.replace(/&/g, "&amp;")
+         		.replace(/</g, "&lt;")
+         		.replace(/>/g, "&gt;")
+         		.replace(/"/g, "&quot;")
+         		.replace(/'/g, "&apos;")
+         		.replace(/'/g, "&apos;")
+         		.replace(/\n/g, line_break? "<br>" : '\n')
+		}
+
+		function bot_send(text) {
+			let m_div = document.createElement('div');
+			m_div.classList.add('message-block');
+			m_div.classList.add('message-bot');
+			m_div.innerHTML = `<span>${escape_html(text, true)}</span>`;
+			messages_area.appendChild(m_div);
+		}
+
+		function reply(input){
+			let m_div = document.createElement('div');
+			m_div.classList.add('message-block');
+			m_div.classList.add('message-bot');
+
+			m_div.innerHTML = `<div class="dot-pulse"></div>`;
+			messages_area.appendChild(m_div);			
+
+			messages_area_container.scrollTop = messages_area_container.scrollHeight - messages_area_container.clientHeight;
+
+			setTimeout(() => {
+				m_div.innerHTML = `<span>${escape_html(chatbot_reply(input), true)}</span>`;
+				subject_area.innerHTML = `<span>${Chatbot.subject}</span>`;
+			}, 200);
+		}
+
+		function send_message() {
+			let m_content = escape_html(message_textarea.innerText).trim().replace(/\s+/g, ' ');
+
+			if (m_content !== "") {
+				let m_div = document.createElement('div');
+				m_div.classList.add('message-block');
+				m_div.classList.add('message-user');
+
+				m_div.innerHTML = `<span>${m_content}</span>`;
+				messages_area.appendChild(m_div);
+
+				message_textarea.innerText = "";
+				setTimeout(() => reply(m_content), 200);
+
+				messages_area_container.scrollTop = messages_area_container.scrollHeight - messages_area_container.clientHeight;
+			}
+		}
+
+		message_textarea.addEventListener('keydown', (e) => {
+			if (e.key == 'Enter') {
+				e.preventDefault();
+				send_message();
+			}
+		})
+
+		bot_send(`Olá, eu sou um chatbot que fala sobre linguagens de programação, se essa é sua primeira vez usando escreva 'ajuda' para ter uma experiência melhor, quando acabar escreva 'começar'.`)
+	</script>
+</body>
+</html>
